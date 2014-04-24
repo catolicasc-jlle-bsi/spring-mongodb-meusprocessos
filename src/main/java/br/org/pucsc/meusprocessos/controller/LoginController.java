@@ -77,7 +77,7 @@ public class LoginController {
 	
 	@RequestMapping(value="/sessionTimeout",method = RequestMethod.GET)
 	public String sessionTimeout(ModelMap model){
-		String errorMsg = "Sua sessão expirou, por favor entre novamente";
+		String errorMsg = "Sua sessao expirou, por favor entre novamente";
 		model.addAttribute("errorMsg",errorMsg);
 		return "login/index";
 	}
@@ -92,11 +92,11 @@ public class LoginController {
 		if (user == null) {
 			Role role = getRoleService().getRoleByName("ROLE_USER");
 			user = getUserService().createUser(name, password, email, role);
-			String succMsg = "Usuário cadastrado com sucesso ";
+			String succMsg = "Usuario cadastrado com sucesso ";
 			return "redirect:/login?succMsg=" + succMsg;
 			
 		} else {
-			String errorMsg = "Desculpe, mas esse usuário já foi cadastrado, verifique os dados informados e tente novamente";
+			String errorMsg = "Desculpe, mas esse usuario ja foi cadastrado, verifique os dados informados e tente novamente";
 			request.setAttribute("errorMsg", errorMsg);
 			return "redirect:/login/novo?errorMsg=" + errorMsg;
 		}

@@ -180,7 +180,7 @@ body {
 							<c:if test="${not empty param.errorMsg}">	
 								<div class="alert alert-danger">${param.errorMsg}</div>
 							</c:if>
-							<form action="${pageContext.request.contextPath}/customer/${page}"
+							<form action="${pageContext.request.contextPath}/customer/save"
 								class="form" method="post" role="form">
 								
 								<input value="${customer.id}" type="hidden" name="id" />

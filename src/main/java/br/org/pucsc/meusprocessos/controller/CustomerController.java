@@ -85,8 +85,8 @@ public class CustomerController {
 	public String postSave(HttpServletRequest request){
 		
 		boolean isCreate = true;
-		
-		if (request.getParameter("id") != null) {
+				
+		if (request.getParameter("id") != null && !request.getParameter("id").equals("")) {
 			isCreate = false;
 		}
 		

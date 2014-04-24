@@ -70,15 +70,17 @@ public class CustomerRepository implements CustomerService {
 	}
 	
 	public Customer updateCustomer(Long id, String name, String cnpj, String email, String phone, String observation) {
-		Update update = new Update();
-		update.set("name", name);
-		update.set("cnpj", cnpj);
-		update.set("email", email);
-		update.set("phone", phone);
-		update.set("observation", observation);
-		mongoTemplate.updateFirst(new Query(Criteria.where("id").is(id)), update, "Customer");
+		Customer customer = getCustomerById(id);
 		
-		return getCustomerById(id);
+		customer.setName(name);
+		customer.setCnpj(cnpj);;
+		customer.setEmail(email);
+		customer.setPhone(phone);
+		customer.setObservation(observation);
+
+		mongoTemplate.save(customer);
+		
+		return customer;
 	}
 
 }
