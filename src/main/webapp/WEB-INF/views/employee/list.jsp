@@ -164,7 +164,7 @@ body {
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li><a href="${pageContext.request.contextPath}/process/">Processo</a></li>
-            <li><a href="${pageContext.request.contextPath}/employee/">Cliente</a></li>
+            <li><a href="${pageContext.request.contextPath}/customer/">Cliente</a></li>
             <li><a href="${pageContext.request.contextPath}/employee/">Funcionário</a></li>
           </ul>
         </div>
